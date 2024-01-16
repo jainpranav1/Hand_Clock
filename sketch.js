@@ -21,11 +21,20 @@ function setup() {
   createCanvas(width * 6, height * 2); // make an HTML canvas element width x height pixels
 }
 
+let prev_min = null;
+
 // draw() is called 60 times per second
 function draw() {
   let hr = hour();
   let min = minute();
   let sec = second();
+
+  // print minute
+  if (prev_min != min) {
+    console.log(min);
+  }
+
+  prev_min = min;
 
   background(0);
 
